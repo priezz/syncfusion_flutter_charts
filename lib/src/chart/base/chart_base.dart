@@ -1632,8 +1632,8 @@ class _ContainerArea extends StatelessWidget {
               chart.trackballBehavior.enable &&
               chart.trackballBehavior.activationMode ==
                   ActivationMode.singleTap) {
-            _triggerTrackballEvent();
             chart.trackballBehavior.onTouchDown(position.dx, position.dy);
+            _triggerTrackballEvent();
           }
           if (chart.crosshairBehavior != null &&
               chart.crosshairBehavior.enable &&
@@ -1795,8 +1795,8 @@ class _ContainerArea extends StatelessWidget {
                           chart.zoomPanBehavior.enablePinching ||
                           chart.zoomPanBehavior.enableSelectionZooming) &&
                       !chart.trackballBehavior.shouldAlwaysShow))) {
-            _triggerTrackballEvent();
             chart.trackballBehavior.onTouchUp(position.dx, position.dy);
+            _triggerTrackballEvent();
             chart.trackballBehavior._isLongPressActivated = false;
           }
           if ((chart.crosshairBehavior != null &&
@@ -1839,8 +1839,8 @@ class _ContainerArea extends StatelessWidget {
                     chart.trackballBehavior.enable &&
                     chart.trackballBehavior.activationMode ==
                         ActivationMode.doubleTap) {
-                  _triggerTrackballEvent();
                   chart.trackballBehavior.onDoubleTap(position.dx, position.dy);
+                  _triggerTrackballEvent();
                 }
                 if (chart.crosshairBehavior != null &&
                     chart.crosshairBehavior.enable &&
@@ -1888,13 +1888,13 @@ class _ContainerArea extends StatelessWidget {
                   position != null) {
                 if (chart.trackballBehavior.activationMode ==
                     ActivationMode.singleTap) {
-                  _triggerTrackballEvent();
                   chart.trackballBehavior.onTouchMove(position.dx, position.dy);
+                  _triggerTrackballEvent();
                 } else if (chart.trackballBehavior.activationMode ==
                         ActivationMode.longPress &&
                     chart.trackballBehavior._isLongPressActivated) {
-                  _triggerTrackballEvent();
                   chart.trackballBehavior.onTouchMove(position.dx, position.dy);
+                  _triggerTrackballEvent();
                 }
               }
               if (chart.crosshairBehavior != null &&
@@ -1938,8 +1938,8 @@ class _ContainerArea extends StatelessWidget {
                           ActivationMode.longPress) &&
                   chart.zoomPanBehavior._isPinching != true) {
                 chart.trackballBehavior._isLongPressActivated = true;
-                _triggerTrackballEvent();
                 chart.trackballBehavior.onTouchDown(position.dx, position.dy);
+                _triggerTrackballEvent();
               }
               if ((chart.crosshairBehavior != null &&
                       chart.crosshairBehavior.enable == true &&
@@ -1983,16 +1983,16 @@ class _ContainerArea extends StatelessWidget {
                       ActivationMode.doubleTap) {
                 if (chart.trackballBehavior.activationMode ==
                     ActivationMode.singleTap) {
-                  _triggerTrackballEvent();
                   chart.trackballBehavior
                       .onTouchMove(position?.dx, position?.dy);
+                  _triggerTrackballEvent();
                 } else if (chart.trackballBehavior != null &&
                     chart.trackballBehavior.activationMode ==
                         ActivationMode.longPress &&
                     chart.trackballBehavior._isLongPressActivated == true) {
-                  _triggerTrackballEvent();
                   chart.trackballBehavior
                       .onTouchMove(position?.dx, position?.dy);
+                  _triggerTrackballEvent();
                 }
               }
               if (chart.crosshairBehavior != null &&
@@ -2021,9 +2021,9 @@ class _ContainerArea extends StatelessWidget {
                   chart.trackballBehavior.activationMode !=
                       ActivationMode.doubleTap &&
                   touchPosition != null) {
-                _triggerTrackballEvent();
                 chart.trackballBehavior
                     .onTouchUp(touchPosition.dx, touchPosition.dy);
+                _triggerTrackballEvent();
                 chart.trackballBehavior._isLongPressActivated = false;
               }
               if (chart.crosshairBehavior.enable &&
