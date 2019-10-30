@@ -1,0 +1,15 @@
+name: syncfusion_flutter_charts
+description: Syncfusion Flutter Charts is a data visualization library written natively in Dart for creating beautiful and high-performance cartesian and circular charts.
+version: 17.3.14
+author: Syncfusion <support@syncfusion.com>
+homepage: https://github.com/syncfusion/flutter-examples
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  syncfusion_flutter_core: ^17.3.14
+  intl: ^0.16.0
+  vector_math: ^2.0.8  
