@@ -289,17 +289,17 @@ class _TrackballPainter extends CustomPainter {
     final Path dashArrayPath = Path();
     if (chart.trackballBehavior.lineType == TrackballLineType.vertical) {
       if (isRectSeries) {
-        dashArrayPath.moveTo(chart.trackballBehavior._position.dx,
+        dashArrayPath.moveTo(chart.trackballBehavior.position.dx,
             chart._chartAxis._axisClipRect.top);
-        dashArrayPath.lineTo(chart.trackballBehavior._position.dx,
+        dashArrayPath.lineTo(chart.trackballBehavior.position.dx,
             chart._chartAxis._axisClipRect.bottom);
         chart.trackballBehavior.lineDashArray != null
             ? _drawDashedLine(paint, canvas, dashArrayPath)
             : canvas.drawPath(dashArrayPath, paint);
       } else if (chart.isTransposed) {
-        dashArrayPath.moveTo(chart.trackballBehavior._position.dx,
+        dashArrayPath.moveTo(chart.trackballBehavior.position.dx,
             chart._chartAxis._axisClipRect.top);
-        dashArrayPath.lineTo(chart.trackballBehavior._position.dx,
+        dashArrayPath.lineTo(chart.trackballBehavior.position.dx,
             chart._chartAxis._axisClipRect.bottom);
         chart.trackballBehavior.lineDashArray != null
             ? _drawDashedLine(paint, canvas, dashArrayPath)
@@ -332,9 +332,9 @@ class _TrackballPainter extends CustomPainter {
             : canvas.drawPath(dashArrayPath, paint);
       } else {
         dashArrayPath.moveTo(chart._chartAxis._axisClipRect.left,
-            chart.trackballBehavior._position.dy);
+            chart.trackballBehavior.position.dy);
         dashArrayPath.lineTo(chart._chartAxis._axisClipRect.right,
-            chart.trackballBehavior._position.dy);
+            chart.trackballBehavior.position.dy);
         chart.trackballBehavior.lineDashArray != null
             ? _drawDashedLine(paint, canvas, dashArrayPath)
             : canvas.drawPath(dashArrayPath, paint);
@@ -537,7 +537,7 @@ class _TrackballPainter extends CustomPainter {
     chartPointInfo = <_ChartPointInfo>[];
     final Rect seriesBounds = chart._chartAxis._axisClipRect;
     if (seriesBounds.contains(position)) {
-      chart.trackballBehavior._position = position;
+      chart.trackballBehavior.position = position;
       double xPos = 0;
       double yPos = 0;
       int seriesIndex = 0;

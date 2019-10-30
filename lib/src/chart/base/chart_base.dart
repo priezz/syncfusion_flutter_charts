@@ -1564,7 +1564,7 @@ class _ContainerArea extends StatelessWidget {
       trackballPainter = _TrackballPainter(
           chart: chart,
           valueNotifier: chart._chartState.trackballRepaintNotifier);
-      chart.trackballBehavior._trackballPainter = trackballPainter;
+      chart.trackballBehavior.painter = trackballPainter;
       _chartWidgets.add(Container(
           height: constraints.maxHeight,
           width: constraints.maxWidth,
@@ -2096,8 +2096,7 @@ class _ContainerArea extends StatelessWidget {
   /// Triggering onTrackballPositionChanging event
   void _triggerTrackballEvent() {
     if (chart.onTrackballPositionChanging != null) {
-      chart._chartPointInfo =
-          chart.trackballBehavior._trackballPainter.chartPointInfo;
+      chart._chartPointInfo = chart.trackballBehavior.painter.chartPointInfo;
       for (int index = 0; index < chart._chartPointInfo.length; index++) {
         TrackballArgs chartPoint;
         chartPoint = TrackballArgs();

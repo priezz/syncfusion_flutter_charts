@@ -189,31 +189,31 @@ class TrackballBehavior extends ChartBehavior {
   InteractiveTooltip tooltipSettings;
 
   /// Touch position
-  Offset _position;
+  Offset position;
 
   /// Holds the instance of trackballPainter
-  _TrackballPainter _trackballPainter;
+  _TrackballPainter painter;
 
   /// Check whether long press activated or not .
   bool _isLongPressActivated;
 
   /// Displays the trackball at the specified x and y-positions.
   void show(double x, double y) {
-    if (_trackballPainter != null &&
+    if (painter != null &&
         activationMode != ActivationMode.none &&
         x != null &&
         y != null) {
-      _trackballPainter._generateAllPoints(Offset(x, y));
-      _trackballPainter.canResetPath = false;
-      _trackballPainter.chart._chartState.trackballRepaintNotifier.value++;
+      painter._generateAllPoints(Offset(x, y));
+      painter.canResetPath = false;
+      painter.chart._chartState.trackballRepaintNotifier.value++;
     }
   }
 
   /// Hides the trackball if it is displayed.
   void hide() {
-    if (_trackballPainter != null && activationMode != ActivationMode.none) {
-      _trackballPainter.canResetPath = true;
-      _trackballPainter.chart._chartState.trackballRepaintNotifier.value++;
+    if (painter != null && activationMode != ActivationMode.none) {
+      painter.canResetPath = true;
+      painter.chart._chartState.trackballRepaintNotifier.value++;
     }
   }
 
@@ -240,16 +240,16 @@ class TrackballBehavior extends ChartBehavior {
   /// Draws trackball
   @override
   void onPaint(Canvas canvas) {
-    if (_trackballPainter != null && !_trackballPainter.canResetPath) {
-      _trackballPainter._drawTrackball(canvas);
+    if (painter != null && !painter.canResetPath) {
+      painter._drawTrackball(canvas);
     }
   }
 
   void _drawLine(Canvas canvas, Paint paint, int seriesIndex) {
-    if (_trackballPainter != null) {
-      _trackballPainter._drawTrackBallLine(canvas, paint, seriesIndex);
+    if (painter != null) {
+      painter._drawTrackBallLine(canvas, paint, seriesIndex);
     }
   }
 
-  Paint _linePainter(Paint paint) => _trackballPainter?._getLinePainter(paint);
+  Paint _linePainter(Paint paint) => painter?._getLinePainter(paint);
 }
