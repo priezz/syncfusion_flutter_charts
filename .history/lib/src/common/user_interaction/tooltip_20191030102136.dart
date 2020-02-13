@@ -325,7 +325,7 @@ class TooltipBehavior extends ChartBehavior {
   }
 
   /// Hides the tooltip if it is displayed.
-  void hide() => _painter._getLocation(Offset(null, null));
+  void hide() => _painter._getLocation(const Offset(null, null));
 
   /// Draws tooltip
   @override
